@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Billionaire Living</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: lacquer-green bands framing pale stone sections; proof first, then three doors (buyers, brokers, developers) that all end at one routed form. Single deliberate look. */
+:root{
+  --lacquer:#10291f;
+  --lacquer-2:#173a2d;
+  --stone:#f3f2ee;
+  --paper:#ffffff;
+  --ink:#121a16;
+  --muted:#56625c;
+  --brass:#b38b4d;
+  --brass-dk:#8a6a36;
+  --brass-lt:#d9bd8c;
+  --line:#d8d6cf;
+  --on-dark:#ece9e1;
+  --on-dark-muted:#a9b5ae;
+  --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --body:"Jost","Avenir Next","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--stone);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;font-weight:300}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--lacquer)}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.08}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-dk);margin:0 0 14px}
+.dark{background:var(--lacquer);color:var(--on-dark)}
+.dark .eyebrow{color:var(--brass-lt)}
+.dark .muted{color:var(--on-dark-muted)}
+.muted{color:var(--muted)}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.ph{background:#fbf3df;color:#3d2f14;border:1px dashed var(--brass);padding:1px 6px;font-size:.9em;font-family:var(--body);font-weight:400}
+
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--lacquer);color:var(--on-dark);border-bottom:1px solid rgba(217,189,140,.25)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.mark{font-family:var(--display);font-size:21px;letter-spacing:.04em;text-decoration:none;white-space:nowrap}
+.mark i{color:var(--brass-lt);padding-left:.25em}
+nav.links{display:flex;gap:26px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+nav.links a{text-decoration:none;opacity:.85}
+nav.links a:hover{opacity:1;color:var(--brass-lt)}
+.btn{display:inline-block;font-family:var(--body);font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:13px 24px;border:1px solid var(--brass);background:var(--brass);color:#10291f;font-weight:500;cursor:pointer;text-align:center}
+.btn:hover{background:var(--brass-lt);border-color:var(--brass-lt)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.btn.ghost:hover{color:var(--brass-dk);border-color:var(--brass-dk)}
+.dark .btn.ghost:hover{color:var(--brass-lt);border-color:var(--brass-lt)}
+@media (max-width:960px){nav.links{display:none}}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:end;padding-block:84px 0}
+.hero h1{font-size:clamp(42px,6.4vw,86px);letter-spacing:-.01em}
+.hero h1 em{color:var(--brass-lt)}
+.hero p.lede{max-width:36em;font-size:19px;margin:26px 0 34px;color:#cfd6d1}
+.doors{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(217,189,140,.35);border:1px solid rgba(217,189,140,.35);margin-bottom:64px}
+.doors a{background:var(--lacquer);padding:18px;text-decoration:none;display:block}
+.doors a:hover{background:var(--lacquer-2)}
+.doors span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-lt)}
+.doors b{display:block;font-family:var(--display);font-weight:400;font-size:21px;margin-top:4px}
+.skyline{position:relative;height:460px;display:flex;align-items:flex-end;justify-content:center;gap:22px}
+.tower{position:relative;background:
+   repeating-linear-gradient(0deg,rgba(217,189,140,.22) 0 1px,transparent 1px 11px),
+   repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 1px,transparent 1px 14px),
+   linear-gradient(180deg,#2a5444,#163a2d);border:1px solid rgba(217,189,140,.35);border-bottom:0}
+.tower.c{width:88px;height:100%;clip-path:polygon(18% 0,82% 0,100% 6%,100% 100%,0 100%,0 6%)}
+.tower.b{width:100px;height:80%;background:
+   repeating-linear-gradient(45deg,rgba(217,189,140,.25) 0 1px,transparent 1px 13px),
+   repeating-linear-gradient(-45deg,rgba(217,189,140,.25) 0 1px,transparent 1px 13px),
+   linear-gradient(180deg,#24493c,#132f25)}
+.tower.x{width:62px;height:52%;opacity:.7}
+.tower.y{width:54px;height:38%;opacity:.55}
+.skyline::after{content:"";position:absolute;left:-10%;right:-10%;bottom:0;height:1px;background:var(--brass-lt);opacity:.6}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;padding-block:56px 0}.skyline{display:none}.doors{margin-bottom:48px}}
+@media (max-width:620px){.doors{grid-template-columns:1fr}}
+
+/* proof bar */
+.proof{border-top:1px solid rgba(217,189,140,.25)}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.proof div{padding:30px 24px 30px 0;min-width:0}
+.proof div+div{padding-left:24px;border-left:1px solid rgba(217,189,140,.2)}
+.proof strong{display:block;font-family:var(--display);font-weight:400;font-size:clamp(26px,2.8vw,36px);color:var(--brass-lt);line-height:1.1;font-variant-numeric:tabular-nums}
+.proof span{font-size:14px;color:#cfd6d1}
+@media (max-width:800px){.proof .wrap{grid-template-columns:1fr 1fr}.proof div:nth-child(3){padding-left:0;border-left:0}.proof div{border-top:1px solid rgba(217,189,140,.2)}}
+
+section{padding-block:100px}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:52px}
+.head h2{font-size:clamp(34px,4.6vw,58px)}
+.head p{margin:0;max-width:36em}
+@media (max-width:860px){.head{grid-template-columns:1fr;gap:18px}section{padding-block:72px}}
+
+/* developers strip */
+.devs{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:center;justify-content:center;padding-block:30px;border-bottom:1px solid var(--line);background:var(--paper)}
+.devs span{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.devs b{font-family:var(--display);font-weight:400;font-size:22px;letter-spacing:.04em}
+
+/* case study */
+.case{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--paper);border:1px solid var(--line)}
+.case .vis{background:var(--lacquer);min-height:520px;display:flex;align-items:flex-end;justify-content:center;position:relative}
+.case .vis .tower{width:30%;height:86%}
+.case .vis .cap{position:absolute;left:20px;right:20px;top:20px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--on-dark-muted);text-transform:uppercase}
+.case .txt{padding:52px;min-width:0}
+.case h3{font-size:clamp(32px,3.8vw,48px)}
+.case .sub{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-dk);margin:12px 0 22px}
+.results{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink);margin:28px 0 12px}
+.results div{padding:16px 16px 16px 0;border-bottom:1px solid var(--line);min-width:0}
+.results dt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.results dd{margin:4px 0 0;font-family:var(--display);font-size:22px;line-height:1.25}
+.did{list-style:none;padding:0;margin:0;font-size:15px}
+.did li{padding:8px 0 8px 20px;position:relative}
+.did li::before{content:"◆";position:absolute;left:0;top:9px;font-size:9px;color:var(--brass)}
+blockquote{margin:28px 0 0;padding:22px 0 0;border-top:1px solid var(--line);font-family:var(--display);font-style:italic;font-size:21px;line-height:1.45}
+blockquote cite{display:block;margin-top:10px;font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:900px){.case{grid-template-columns:1fr}.case .vis{min-height:300px}.case .txt{padding:28px}}
+
+/* team */
+.team{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);border:1px solid var(--line)}
+.partner{background:var(--paper);padding:40px;display:grid;grid-template-columns:150px 1fr;gap:32px;min-width:0}
+.portrait{aspect-ratio:3/4;max-width:100%;background:linear-gradient(160deg,var(--lacquer-2),var(--lacquer));display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:52px;color:var(--brass-lt);font-style:italic}
+.partner h3{font-size:32px}
+.partner .role{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-dk);margin:8px 0 16px}
+.partner p{margin:0 0 14px}
+.partner ul{margin:0;padding:0;list-style:none;font-size:15px}
+.partner li{padding:7px 0;border-top:1px solid var(--line)}
+@media (max-width:980px){.team{grid-template-columns:1fr}}
+@media (max-width:520px){.partner{grid-template-columns:1fr;padding:28px}.portrait{max-width:170px}}
+
+/* residences */
+.feature{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.feature .visual{position:relative;min-height:540px;background:linear-gradient(180deg,#1d4536 0%,#10291f 70%);border:1px solid rgba(217,189,140,.3);overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+.feature .visual .tower{width:34%;height:88%}
+.feature .visual .cap{position:absolute;left:20px;right:20px;top:20px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--on-dark-muted);text-transform:uppercase}
+.feature h2{font-size:clamp(38px,5vw,68px)}
+.feature h2 small{display:block;font-family:var(--mono);font-size:13px;letter-spacing:.16em;color:var(--brass-lt);margin-top:14px;text-transform:uppercase}
+dl.facts{display:grid;grid-template-columns:1fr 1fr;margin:32px 0;border-top:1px solid rgba(217,189,140,.3)}
+dl.facts div{padding:15px 16px 15px 0;border-bottom:1px solid rgba(217,189,140,.3);min-width:0}
+dl.facts dt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-lt)}
+dl.facts dd{margin:4px 0 0;font-family:var(--display);font-size:23px;line-height:1.2}
+.note{font-size:13px;color:var(--on-dark-muted);margin-top:16px}
+.row-btns{display:flex;flex-wrap:wrap;gap:14px}
+@media (max-width:900px){.feature{grid-template-columns:1fr}.feature .visual{min-height:320px}}
+
+.more{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:72px}
+.card{border:1px solid rgba(217,189,140,.35);padding:28px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card .chip{align-self:flex-start;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--brass-lt);color:var(--brass-lt);padding:4px 9px}
+.card h3{font-size:28px}
+.card p{margin:0;font-size:15px;color:var(--on-dark-muted);flex:1}
+.card a{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-lt);text-decoration:none}
+.card a:hover{text-decoration:underline}
+@media (max-width:900px){.more{grid-template-columns:1fr}}
+
+/* developers */
+.models{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink)}
+.model{padding:30px 28px 30px 0;min-width:0}
+.model+.model{padding-left:28px;border-left:1px solid var(--line)}
+.model .k{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-dk)}
+.model h3{font-size:28px;margin:8px 0 12px}
+.model p{margin:0;font-size:15px;color:var(--muted)}
+@media (max-width:860px){.models{grid-template-columns:1fr}.model,.model+.model{padding-left:0;border-left:0;border-bottom:1px solid var(--line)}}
+.scope{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.scope ul{list-style:none;padding:0;margin:0;columns:2;column-gap:32px;font-size:15px}
+.scope li{break-inside:avoid;padding:9px 0;border-top:1px solid var(--line)}
+@media (max-width:860px){.scope{grid-template-columns:1fr}.scope ul{columns:1}}
+
+/* brokers */
+.broker{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(217,189,140,.3);border:1px solid rgba(217,189,140,.3)}
+.perks div{background:var(--lacquer);padding:24px;min-width:0}
+.perks h4{font-family:var(--display);font-weight:400;font-size:22px;margin:0 0 6px}
+.perks p{margin:0;font-size:14.5px;color:var(--on-dark-muted)}
+@media (max-width:860px){.broker{grid-template-columns:1fr}}
+@media (max-width:520px){.perks{grid-template-columns:1fr}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px;background:var(--paper);padding:36px;border:1px solid var(--line)}
+form .full{grid-column:1/-1}
+fieldset{border:0;padding:0;margin:0;grid-column:1/-1}
+legend{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding:0}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--ink)}
+.seg label{margin:0;cursor:pointer;text-align:center;padding:12px 6px;font-family:var(--body);font-size:14px;letter-spacing:.04em;text-transform:none;color:var(--ink);border-left:1px solid var(--ink)}
+.seg label:first-of-type{border-left:0}
+.seg input{position:absolute;opacity:0;width:1px;height:1px}
+.seg input:checked+span{font-weight:500}
+.seg label:has(input:checked){background:var(--lacquer);color:var(--on-dark)}
+.seg label:has(input:focus-visible){outline:2px solid var(--brass);outline-offset:-4px}
+@media (max-width:560px){.seg{grid-template-columns:1fr 1fr}.seg label:nth-of-type(3){border-left:0}.seg label:nth-of-type(n+3){border-top:1px solid var(--ink)}}
+label.f{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;font:inherit;font-size:16px;padding:12px;border:1px solid #8a948f;background:var(--paper);color:var(--ink);border-radius:0}
+textarea{min-height:92px;resize:vertical}
+.grp{display:contents}
+.consent{font-size:12px;color:var(--muted);margin:0}
+.ok{grid-column:1/-1;background:var(--lacquer);color:var(--on-dark);padding:16px;font-size:15px}
+.err{grid-column:1/-1;color:#8f2d1f;font-size:14px;margin:0}
+@media (max-width:860px){.contact{grid-template-columns:1fr}form{grid-template-columns:1fr;padding:24px}}
+.direct{margin-top:28px;display:grid;gap:14px}
+.direct div{border-top:1px solid var(--line);padding-top:14px}
+.direct b{font-family:var(--display);font-weight:400;font-size:22px;display:block}
+
+footer{padding-block:56px 40px;font-size:13px}
+footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(217,189,140,.25);margin-bottom:24px}
+footer p{max-width:84ch;color:var(--on-dark-muted);margin:0 0 12px}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1,.hero .lede,.doors{animation:rise .9s ease-out both}
+  .hero .lede{animation-delay:.12s}.doors{animation-delay:.22s}
+  .skyline .tower{animation:grow 1.4s cubic-bezier(.2,.7,.2,1) both;transform-origin:bottom}
+  .skyline .tower.b{animation-delay:.15s}.skyline .tower.x{animation-delay:.3s}.skyline .tower.y{animation-delay:.4s}
+  @keyframes rise{from{transform:translateY(14px)}to{transform:none}}
+  @keyframes grow{from{transform:scaleY(.6)}to{transform:none}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.hero{position:relative;overflow:hidden}
+.hero-img{position:absolute;inset:0;background:url(img/hero.jpg) center/cover no-repeat}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,41,31,.94) 0%,rgba(16,41,31,.78) 42%,rgba(16,41,31,.25) 75%,rgba(16,41,31,.1) 100%),linear-gradient(0deg,rgba(16,41,31,.95) 0%,rgba(16,41,31,0) 30%)}
+.hero .wrap,.hero .proof{position:relative}
+.hero .wrap{grid-template-columns:minmax(0,640px) 1fr;padding-block:140px 0}
+@media (max-width:900px){.hero-img::after{background:linear-gradient(0deg,rgba(16,41,31,.96) 35%,rgba(16,41,31,.55) 100%)}.hero .wrap{padding-block:120px 0}}
+.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:100%}
+.visual .cap,.vis .cap{z-index:1;text-shadow:0 1px 6px rgba(0,0,0,.6);color:#e6e2d8}
+.discretion{position:relative;overflow:hidden;background:var(--lacquer) url(img/lounge.jpg) center/cover no-repeat}
+.discretion::before{content:"";position:absolute;inset:0;background:rgba(10,22,17,.72)}
+.discretion .wrap{position:relative}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top">Billionaire<i>Living</i></a>
+    <nav class="links" aria-label="Main">
+      <a href="#residences">Residences</a><a href="#why">Why Us</a><a href="#team">Team</a><a href="#brokers">Brokers</a><a href="#developers">Developers</a>
+    </nav>
+    <a class="btn" href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero dark" style="padding-block:0">
+  <div class="hero-img" role="img" aria-label="Terrace overlooking Biscayne Bay at dusk"></div>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Branded residences · Miami</p>
+      <h1>Where Miami's <em>finest residences</em> are bought.</h1>
+      <p class="lede">Cipriani in Brickell. Bentley on Sunny Isles Beach. Billionaire Living gives you private access to available residences, current pricing and floor plans before they reach the open market, with decades of Miami luxury experience on your side of the table.</p>
+      <div class="doors">
+        <a href="#residences" data-pick="buyer" data-project="Cipriani Residences Miami"><span>Brickell</span><b>Cipriani Residences</b></a>
+        <a href="#residences" data-pick="buyer" data-project="Bentley Residences"><span>Sunny Isles Beach</span><b>Bentley Residences</b></a>
+        <a href="#contact" data-pick="buyer"><span>Private access</span><b>Request availability</b></a>
+      </div>
+    </div>
+  </div>
+  <div class="proof">
+    <div class="wrap">
+      <div><strong>Cipriani</strong><span>Brickell · occupancy expected 2027</span></div>
+      <div><strong>Bentley</strong><span>Sunny Isles Beach · 749 ft oceanfront</span></div>
+      <div><strong>Private</strong><span>Off-market and pre-release residences</span></div>
+      <div><strong>Buy · Rent</strong><span>Pre-construction, resale and leasing</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="devs">
+  <span>Developments we represent</span>
+  <b>Bentley Residences</b><b>Cipriani Residences Miami</b><span class="ph">Add others with developer approval</span>
+</div>
+
+
+
+<section id="why">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="eyebrow">Why Billionaire Living</p><h2>We know these buildings floor by floor.</h2></div>
+      <p class="muted">Branded towers look alike in a brochure. They are not alike once you compare lines, views, delivery dates and what the developer will actually negotiate. That is the work we do for our buyers.</p>
+    </div>
+    <div class="services">
+      <div class="svc"><h3>Every line, compared</h3><p>View corridors, ceiling heights, exposure and how one stack prices against another in the same tower.</p></div>
+      <div class="svc"><h3>First to know</h3><p>Our developer relationships mean you hear about releases, price changes and resales before the open market.</p></div>
+      <div class="svc"><h3>Straight answers</h3><p>We will tell you which residence fits you, and which one does not, even when that means waiting.</p></div>
+      <div class="svc"><h3>After the keys</h3><p>Furnishing referrals, rental management and resale when the time comes. We stay with you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="residences" class="dark">
+  <div class="wrap feature">
+    <div class="visual">
+      <img class="photo" src="img/interior.jpg" alt="Italian-inspired residence interior with green lacquer walls and bay views at sunset"><span class="cap">Lifestyle imagery · illustrative</span>
+    </div>
+    <div>
+      <p class="eyebrow">Now selling</p>
+      <h2>Cipriani Residences Miami<small>1420 South Miami Avenue · Brickell</small></h2>
+      <p class="muted" style="margin-top:22px">Cipriani's Venetian hospitality, in a residential tower at the southern end of Brickell. Residents get Cipriani service and a private club atmosphere, close to Brickell City Centre and the bay.</p>
+      <dl class="facts">
+        <div><dt>Residences</dt><dd>397</dd></div>
+        <div><dt>Developer</dt><dd>Mast Capital</dd></div>
+        <div><dt>Architect</dt><dd>Arquitectonica</dd></div>
+        <div><dt>Occupancy</dt><dd>Expected summer 2027</dd></div>
+      </dl>
+      <div class="row-btns">
+        <a class="btn" href="#contact" data-pick="buyer" data-project="Cipriani Residences Miami">Request plans &amp; pricing</a>
+        <a class="btn ghost" href="#contact" data-pick="renter" data-project="Cipriani Residences Miami">Ask about rentals</a>
+      </div>
+      <p class="note">Details from the developer's site and project press as of November 2026. Dates, pricing and availability are subject to change.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="more">
+      <div class="card">
+        <span class="chip">Now selling</span>
+        <h3>Bentley Residences</h3>
+        <p>Sunny Isles Beach. Oceanfront homes with private 3 or 4-car sky garages. We know every line in this building.</p>
+        <a href="#contact" data-pick="buyer" data-project="Bentley Residences">Ask what's available</a>
+      </div>
+      <div class="card">
+        <span class="chip">New development</span>
+        <h3>Other Miami towers</h3>
+        <p>Branded and boutique new construction from Brickell to Palm Beach. Tell us what you want and we will shortlist it.</p>
+        <a href="#contact" data-pick="buyer" data-project="Other new development">Get a shortlist</a>
+      </div>
+      <div class="card">
+        <span class="chip">Rentals</span>
+        <h3>Luxury leases</h3>
+        <p>Seasonal and annual rentals in Miami's best buildings, and leasing for owners who want their residence working.</p>
+        <a href="#contact" data-pick="renter" data-project="Rental">Find a rental</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="eyebrow">Leadership</p><h2>Long experience. Modern reach.</h2></div>
+      <p class="muted">Billionaire Living is led by Martha Velez and Christopher Savage. Behind them is the full team at Savage Global Marketing: media buyers, designers, content producers, web developers and CRM specialists, all working on your development under one roof.</p>
+    </div>
+    <div class="team">
+      <article class="partner">
+        <div class="portrait" aria-hidden="true">MV</div>
+        <div>
+          <h3>Martha Velez</h3>
+          <p class="role">Founding Partner · Head of Sales</p>
+          <p>Martha has spent <span class="ph">[XX]</span> years selling luxury and new development residences in Miami. <span class="ph">Add: brokerage history, towers she has sold, languages, notable buyers or markets (Latin America, Europe).</span></p>
+          <ul>
+            <li>Bentley Residences, Sunny Isles Beach</li>
+            <li><span class="ph">Career sales volume · awards · designations</span></li>
+            <li><span class="ph">Languages spoken</span></li>
+          </ul>
+        </div>
+      </article>
+      <article class="partner">
+        <div class="portrait" aria-hidden="true">CS</div>
+        <div>
+          <h3>Christopher Savage</h3>
+          <p class="role">Founding Partner · Head of Marketing &amp; Growth</p>
+          <p>Christopher is the founder of Savage Global Marketing, a Fort Lauderdale agency running marketing, lead generation and automation for Florida businesses. His team built the growth engine behind Bentley Residences' 502% lead growth.</p>
+          <ul>
+            <li>Buyer and broker lead generation</li>
+            <li>Launch campaigns, film and listing presentation</li>
+            <li>CRM, instant response and follow-up automation</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="dark discretion">
+  <div class="wrap" style="max-width:860px;text-align:center">
+    <p class="eyebrow">Discretion</p>
+    <h2 style="font-size:clamp(30px,4vw,48px)">Your name, your budget and your plans stay private.</h2>
+    <p class="muted" style="margin:20px auto 0;max-width:40em">Many of our clients buy through entities and prefer never to appear in a listing or a headline. Showings are by private appointment, and much of what we present never reaches the public market.</p>
+  </div>
+</section>
+
+<section id="record">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="eyebrow">For developers · Our results</p><h2>Bentley Residences, Sunny Isles Beach.</h2></div>
+      <p class="muted">The world's first Bentley-branded residential tower needed a steady flow of qualified buyers. We built one connected system of paid media, content, landing pages and CRM follow-up, and grew lead volume more than six times while media spend stayed essentially flat.</p>
+    </div>
+    <div class="case">
+      <div class="vis"><img class="photo" src="img/ocean.jpg" alt="Oceanfront living room above Sunny Isles Beach at sunrise"><span class="cap">Lifestyle imagery · illustrative</span></div>
+      <div class="txt">
+        <h3>For Dezer Development</h3>
+        <p class="sub">749 ft · 216 oceanfront residences · Dezervator™ sky garages</p>
+        <ul class="did">
+          <li>Meta and Google campaigns reaching qualified luxury buyers</li>
+          <li>Landing pages and tracking built to convert and measure every inquiry</li>
+          <li>CRM, automation and lead qualification so no buyer waits</li>
+          <li>Content that multiplied reach beyond paid media</li>
+        </ul>
+        <dl class="results">
+          <div><dt>Lead growth · Q3 2025 to Q3 2026</dt><dd>+502%</dd></div>
+          <div><dt>Estimated return on ad spend</dt><dd>437×</dd></div>
+          <div><dt>Meta cost per lead</dt><dd>−83%</dd></div>
+          <div><dt>Google cost per lead</dt><dd>−51%</dd></div>
+          <div><dt>Content views</dt><dd>71K+ vs 3K+ before</dd></div>
+          <div><dt>Media spend</dt><dd>Essentially flat</dd></div>
+        </dl>
+        <p class="muted" style="font-size:13px;margin:0">Return on ad spend estimated from attributed sales and average transaction value.</p>
+        <blockquote><span class="ph">Quote from a Dezer Development executive, with written approval to publish.</span><cite>Name · Title · Dezer Development</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="developers">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="eyebrow">For developers</p><h2>Hand us your next launch.</h2></div>
+      <p class="muted">We sell and market ultra-luxury new developments for the developers who build them. You get senior sales leadership and an in-house marketing operation that fills the gallery, under one agreement.</p>
+    </div>
+    <div class="models">
+      <div class="model"><span class="k">Commission-based</span><h3>Sales representation</h3><p>We sell your inventory directly and through the broker community. Paid on closed sales.</p></div>
+      <div class="model"><span class="k">Project-based</span><h3>Launch &amp; marketing</h3><p>Brand, campaigns, broker events and lead systems for your sales team, at a fixed project fee.</p></div>
+      <div class="model"><span class="k">Hybrid</span><h3>Full sales program</h3><p>Marketing fee plus commission. One team accountable for leads, tours and contracts.</p></div>
+    </div>
+    <div class="scope">
+      <div>
+        <h3 style="font-size:30px">What a program includes</h3>
+        <p class="muted">The same engine that grew Bentley Residences leads by 502% at an 83% lower cost per lead, adapted to your tower and buyer.</p>
+        <p style="margin-top:22px"><a class="btn" href="#contact" data-pick="developer">Request a partnership meeting</a></p>
+      </div>
+      <ul>
+        <li>Pricing and absorption strategy</li>
+        <li>Buyer and investor campaigns</li>
+        <li>Broker outreach and events</li>
+        <li>Sales gallery tours and closings</li>
+        <li>Website and landing pages</li>
+        <li>Film, photography and renderings direction</li>
+        <li>CRM with instant lead response</li>
+        <li>Weekly sales and lead reports</li>
+        <li>International buyer outreach</li>
+        <li>Rental program for delivered units</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="brokers" class="dark">
+  <div class="wrap broker">
+    <div>
+      <p class="eyebrow">For brokers</p>
+      <h2 style="font-size:clamp(34px,4.6vw,58px)">Bring your buyer. We protect your commission.</h2>
+      <p class="muted" style="margin-top:20px">We co-broke on Cipriani Residences, Bentley Residences and the other towers we represent. Register your client before the first visit and we handle the rest with the developer.</p>
+      <p style="margin-top:28px"><a class="btn" href="#contact" data-pick="broker">Register a client</a></p>
+    </div>
+    <div class="perks">
+      <div><h4>Registration confirmed</h4><p>Your client is registered with the developer, in writing, the same business day.</p></div>
+      <div><h4>Live inventory</h4><p>Current availability, floor plans and price sheets whenever you ask.</p></div>
+      <div><h4>Hosted tours</h4><p>We host you and your client at the sales gallery and stay out of your relationship.</p></div>
+      <div><h4>Commission</h4><p>Paid at closing per the developer's co-broke schedule. <span class="ph">[Confirm % per project]</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2 style="font-size:clamp(34px,4.6vw,58px)">Tell us who you are. We reply the same business day.</h2>
+      <p class="muted" style="margin-top:20px">Buyers get available residences and pricing. Brokers get a registration confirmation. Developers get a meeting with our leadership.</p>
+      <div class="direct">
+        <div><b>Martha Velez</b><span class="ph">Phone · email</span></div>
+        <div><b>Christopher Savage</b><span class="ph">Phone · email</span></div>
+      </div>
+    </div>
+    <form id="inquiry" novalidate>
+      <fieldset>
+        <legend>I am a</legend>
+        <div class="seg">
+          <label><input type="radio" name="type" id="t-buyer" value="buyer" checked><span>Buyer</span></label>
+          <label><input type="radio" name="type" id="t-renter" value="renter"><span>Renter</span></label>
+          <label><input type="radio" name="type" id="t-broker" value="broker"><span>Broker</span></label>
+          <label><input type="radio" name="type" id="t-developer" value="developer"><span>Developer</span></label>
+        </div>
+      </fieldset>
+      <div><label class="f" for="f-name">Full name</label><input type="text" id="f-name" autocomplete="name"></div>
+      <div><label class="f" for="f-phone">Phone</label><input type="tel" id="f-phone" autocomplete="tel"></div>
+      <div class="full"><label class="f" for="f-email">Email</label><input type="email" id="f-email" autocomplete="email"></div>
+
+      <div class="grp" data-for="buyer renter broker">
+        <div><label class="f" for="f-project">Project</label>
+          <select id="f-project"><option>Cipriani Residences Miami</option><option>Bentley Residences</option><option>Other new development</option><option>Rental</option><option>Not sure yet</option></select></div>
+        <div><label class="f" for="f-budget">Budget</label>
+          <select id="f-budget"><option>Under $2M</option><option>$2M to $5M</option><option>$5M to $10M</option><option>$10M+</option><option>Rental: under $25K / month</option><option>Rental: $25K+ / month</option></select></div>
+      </div>
+      <div class="grp" data-for="broker" hidden>
+        <div><label class="f" for="f-brokerage">Brokerage</label><input type="text" id="f-brokerage" autocomplete="organization"></div>
+        <div><label class="f" for="f-client">Client name to register</label><input type="text" id="f-client"></div>
+      </div>
+      <div class="grp" data-for="developer" hidden>
+        <div><label class="f" for="f-company">Company</label><input type="text" id="f-company" autocomplete="organization"></div>
+        <div><label class="f" for="f-stage">Project stage</label>
+          <select id="f-stage"><option>Planning / pre-launch</option><option>Selling now</option><option>Near delivery</option><option>Delivered, units remaining</option></select></div>
+        <div class="full"><label class="f" for="f-dproject">Project name, location and unit count</label><input type="text" id="f-dproject"></div>
+      </div>
+
+      <div class="full"><label class="f" for="f-msg" id="msg-label">Bedrooms, timing, anything else</label><textarea id="f-msg"></textarea></div>
+      <p class="consent full">By submitting, you agree to be contacted by Billionaire Living by call, email and text. Message and data rates may apply. Reply STOP to opt out.</p>
+      <p class="err" id="err" hidden></p>
+      <div class="full"><button class="btn" type="submit" id="submit">Send request</button></div>
+      <div class="ok" id="ok" hidden></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="dark">
+  <div class="wrap">
+    <div class="top">
+      <span class="mark">Billionaire<i>Living</i></span>
+      <span class="ph">Brokerage name · license number · office address</span>
+    </div>
+    <p>This is not the official website of Cipriani Residences Miami, Bentley Residences or their developers. Billionaire Living, Martha Velez and Christopher Savage are licensed real estate professionals and do not represent that they are the developer of any project shown. Project names are used only to identify the projects. Lifestyle images are illustrative and do not depict any specific project. Renderings, prices, dimensions and availability are subject to change without notice. Oral representations cannot be relied upon as correctly stating the representations of the developer; refer to the developer's documents.</p>
+    <p>Equal Housing Opportunity.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form=document.getElementById('inquiry');
+  var labels={buyer:'Bedrooms, timing, anything else',renter:'Move-in date, length of lease, bedrooms',broker:"Client's budget, timing and what they want",developer:'What you need: sales, marketing or both'};
+  var buttons={buyer:'Send request',renter:'Find my rental',broker:'Register my client',developer:'Request a meeting'};
+  function setType(t){
+    document.getElementById('t-'+t).checked=true;
+    form.querySelectorAll('.grp').forEach(function(g){g.hidden=g.dataset.for.split(' ').indexOf(t)<0});
+    document.getElementById('msg-label').textContent=labels[t];
+    document.getElementById('submit').textContent=buttons[t];
+    document.getElementById('ok').hidden=true;
+  }
+  form.querySelectorAll('input[name=type]').forEach(function(r){r.addEventListener('change',function(){setType(r.value)})});
+  document.querySelectorAll('[data-pick]').forEach(function(a){a.addEventListener('click',function(){
+    setType(a.dataset.pick);
+    var p=a.dataset.project;
+    if(p){var s=document.getElementById('f-project');for(var i=0;i<s.options.length;i++){if(s.options[i].text===p){s.selectedIndex=i}}}
+  })});
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var err=document.getElementById('err');
+    var n=document.getElementById('f-name'),m=document.getElementById('f-email');
+    if(!n.value.trim()){err.textContent='Add your name so we know who to reply to.';err.hidden=false;n.focus();return}
+    if(!/^\S+@\S+\.\S+$/.test(m.value)){err.textContent='Add a valid email, for example name@domain.com.';err.hidden=false;m.focus();return}
+    err.hidden=true;
+    var ok=document.getElementById('ok');
+    ok.textContent='Preview only: this form is not connected yet. On the live site it will route '+form.querySelector('input[name=type]:checked').value+' requests to the right pipeline in your CRM.';
+    ok.hidden=false;
+  });
+})();
+</script>
+
+</body>
+</html>
